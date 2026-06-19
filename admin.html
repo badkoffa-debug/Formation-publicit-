@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajouter une publication</title>
+    <meta name="description" content="Page simple pour preparer une nouvelle publication du site." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html#accueil" aria-label="Retour a l'accueil">
+        <span class="brand-mark">AP</span>
+        <span>Affiches & Pub</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="index.html#accueil">Accueil</a>
+        <a href="index.html#publications">Publications</a>
+        <a href="admin.html">Ajouter</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section admin-page">
+        <div class="section-heading">
+          <p class="eyebrow">Ajouter</p>
+          <h1>Ajouter une publication</h1>
+          <p>
+            Remplis le formulaire, copie le code genere, puis colle-le dans la section
+            Publications de ton fichier index.html sur GitHub.
+          </p>
+        </div>
+
+        <div class="admin-grid">
+          <form class="admin-form" id="publicationForm">
+            <label>
+              Date ou categorie
+              <input type="text" name="date" placeholder="Ex: 25 juin 2026" required />
+            </label>
+            <label>
+              Titre
+              <input type="text" name="title" placeholder="Ex: Nouvelle session ouverte" required />
+            </label>
+            <label>
+              Description
+              <textarea
+                name="description"
+                rows="5"
+                placeholder="Ecris le texte de la publication"
+                required
+              ></textarea>
+            </label>
+            <label>
+              Texte du bouton
+              <input type="text" name="buttonText" value="Demander les details" required />
+            </label>
+            <label>
+              Lien du bouton
+              <input type="url" name="buttonLink" value="https://wa.me/22898837548" required />
+            </label>
+            <button class="btn btn-primary" type="submit">Generer la publication</button>
+          </form>
+
+          <div class="admin-output">
+            <h2>Apercu</h2>
+            <div class="posts-grid single-post-preview" id="previewArea">
+              <article class="post-card">
+                <p class="post-date">Date</p>
+                <h3>Titre de la publication</h3>
+                <p>La publication apparaitra ici apres validation du formulaire.</p>
+                <a href="https://wa.me/22898837548" target="_blank" rel="noopener">Demander les details</a>
+              </article>
+            </div>
+
+            <h2>Code a copier</h2>
+            <textarea class="code-output" id="codeOutput" rows="10" readonly></textarea>
+            <button class="btn btn-secondary" id="copyCode" type="button">Copier le code</button>
+            <p class="admin-note">
+              Sur GitHub, ouvre index.html, cherche <strong>posts-grid</strong>, colle ce code
+              avec les autres publications, puis clique sur Commit changes.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Affiches & Pub. Formation en creation publicitaire.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
